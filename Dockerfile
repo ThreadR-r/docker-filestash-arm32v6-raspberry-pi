@@ -13,22 +13,24 @@ RUN mkdir -p $GOPATH/src/github.com/mickael-kerjean/ && \
     mkdir /tmp/deps && \
     cd /tmp/deps && \
     # libvips #######
-    cd /tmp/deps && \
-    curl -L -X GET https://github.com/libvips/libvips/releases/download/v8.9.1/vips-8.9.1.tar.gz > libvips.tar.gz && \
-    tar -zxf libvips.tar.gz && \
-    cd vips-8.9.1/ && \
-    apk --no-cache add libexif-dev tiff-dev jpeg-dev libjpeg-turbo-dev libpng-dev librsvg-dev giflib-dev glib-dev fftw-dev glib-dev libc-dev expat-dev orc-dev && \
-    ./configure && \
-    make -j 6 && \
-    make install && \
+    #cd /tmp/deps && \
+    #curl -L -X GET https://github.com/libvips/libvips/releases/download/v8.9.1/vips-8.9.1.tar.gz > libvips.tar.gz && \
+    #tar -zxf libvips.tar.gz && \
+    #cd vips-8.9.1/ && \
+    #apk --no-cache add libexif-dev tiff-dev jpeg-dev libjpeg-turbo-dev libpng-dev librsvg-dev giflib-dev glib-dev fftw-dev glib-dev libc-dev expat-dev orc-dev && \
+    #./configure && \
+    #make -j 6 && \
+    #make install && \
+    apk --no-cache add vips && \
     # libraw ########
-    cd /tmp/deps && \
-    curl -X GET https://www.libraw.org/data/LibRaw-0.19.5.tar.gz > libraw.tar.gz && \
-    tar -zxf libraw.tar.gz && \
-    cd LibRaw-0.19.5/ && \
-    ./configure && \
-    make -j 6 && \
-    make install && \
+    #cd /tmp/deps && \
+    #curl -X GET https://www.libraw.org/data/LibRaw-0.19.5.tar.gz > libraw.tar.gz && \
+    #tar -zxf libraw.tar.gz && \
+    #cd LibRaw-0.19.5/ && \
+    #./configure && \
+    #make -j 6 && \
+    #make install && \
+    apk --no-cache add libraw && \
     #################
     # Prepare Build
     cd $GOPATH/src/github.com/mickael-kerjean && \
