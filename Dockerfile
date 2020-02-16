@@ -8,7 +8,7 @@ ENV CGO_LDFLAGS_ALLOW '-fopenmp'
 RUN mkdir -p $GOPATH/src/github.com/mickael-kerjean/ && \
     #################
     echo "# Dependencies" && \
-    apk --no-cache --virtual .build-deps add make gcc g++ curl nodejs git npm python && \
+    apk --no-cache --virtual .build-deps add make gcc g++ curl nodejs git npm python pkgconf && \
     apk  --no-cache --virtual .go add go --repository http://dl-3.alpinelinux.org/alpine/edge/community && \
     mkdir /tmp/deps && \
     cd /tmp/deps && \
